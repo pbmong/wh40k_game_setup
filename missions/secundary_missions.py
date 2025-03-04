@@ -43,7 +43,8 @@ While this Secondary Mission is active, each time an enemy unit that started the
 turn within range of an objective marker is destroyed, you score 3VP\n\
 (to a maximum of 5VP). Note that VP are scored even if such a unit is destroyed\n\
 and then subsequently resurrected for any reason. If you score any VP from this\n\
-Secondary Mission during a turn, then at the end of that turn this Secondary Mission is achieved."
+Secondary Mission during a turn, then at the end of that turn this Secondary Mission\n\
+is achieved."
     },
     {
         "name":"Defend Stronghold",
@@ -89,8 +90,110 @@ Secondary Mission is achieved and you score 2VP for each corner scanned by your 
 this turn."
     },
     {
-        "name":"",
+        "name":"Behind enemy lines",
         "description":
-            "Empty"
+            "BEHIND ENEMY LINES\n\n\
+At the end of your turn, if two or more units from your army (excluding Aircraft) are\n\
+wholly within your opponent’s deployment zone, this Secondary Mission is achieved and\n\
+you score 4VP.\n\
+If, at the end of your turn, only one unit from your army (excluding Aircraft) is wholly\n\
+within your opponent’s deployment zone, this Secondary Mission is still achieved, but in\n\
+this instance you score 2VP instead of 4VP.\n\
+If you are using Tactical Missions, then when this Secondary Mission is achieved you score\n\
+an extra 1VP (for a maximum of 5VP)."
+    },
+    {
+        "name":"Assasination",
+        "description":
+            "ASSASINATION\n\n\
+If you are using Fixed Missions, then while this Secondary Mission is active, each time\n\
+an enemy Character model is destroyed, you score 4VP. If you are using Tactical Missions,\n\
+then at the end of the turn, if either of the conditions below are satisfied,\n\
+this Secondary Mission is achieved and you score 5VP:\n\
+ - One or more enemy Character units were destroyed this turn.\n\
+ - All Character units from your opponent’s Army Roster have been destroyed during the battle.\n\
+Note that if you are using Tactical Missions, this Secondary Mission is achieved even if\n\
+such a unit was destroyed and then subsequently resurrected for any reason"
+    },
+    {
+        "name":"Bring it down",
+        "description":
+            "BRING IT DOWN\n\n\
+While this Secondary Mission is active, each time an enemy Monster or Vehicle model is\n\
+destroyed, you score 2VP and an extra 1VP for each of the conditions below that are\n\
+satisfied (all are cumulative):\n\
+ - The destroyed model had a Wounds characteristic of 10+\n\
+ - The destroyed model had a Wounds characteristic of 15+\n\
+ - The destroyed model had a Wounds characteristic of 20+\n\
+Note that VP are scored even if such a model is destroyed and then subsequently resurrected\n\
+for any reason. If you score any VP from this Secondary Mission during a turn, then at the\n\
+end of that turn this Secondary Mission is achieved. If you are using Tactical Missions,\n\
+then when this Secondary Mission is achieved you score an extra 1VP. However, if you are\n\
+using Tactical Missions, you cannot score more than 8VP in total from this Secondary Mission."
+    },
+    {
+        "name":"Engage all fronts",
+        "description":
+            "ENGAGE ALL FRONTS\n\n\
+At the end of your turn, if you have one or more qualifying units (see below) from your army\n\
+wholly within three or more different table quarters, and those units are all more than 3” away\n\
+from any other table quarter, this Secondary Mission is achieved and you score 4VP if you have\n\
+qualifying units in four different table quarters, or 2VP if you have qualifying units in three\n\
+different table quarters.\n\
+While a unit is Battle-shocked, it is not a qualifying unit.\n\
+If, when you draw this Secondary Mission card, you only have one or two qualifying units\n\
+remaining in your army, you can discard this Secondary Mission card and draw a new\n\
+Secondary Mission card.\n\
+If you are using tactical Missions, then when this Secondary Mission is achieved you score\n\
+an extra 1VP (for a maximum of 5VP)."
+    },
+    {
+        "name":"Storm hostile objective",
+        "description":
+            "STORM HOSTILE OBJECTIVE\n\n\
+At the end of your turn, if either of the below conditions are satisfied,\n\
+this Secondary Mission is achieved and you score 4VP if you are using Fixed Missions,\n\
+or 5VP if you are using Tactical Missions:\n\
+ - You control one or more objective markers that were controlled by your opponent at\n\
+   the start of your turn.\n\
+ - Your opponent did not control any objective markers at the start of your turn and you\n\
+   control one or more objective markers that you did not control at the start of your turn.\n\
+This Secondary Mission cannot be achieved during the first battle round; if you randomly drew\n\
+this Secondary Mission card during the first battle round, draw a new Secondary Mission card\n\
+and shuffle this Secondary Mission card back into your Secondary Mission deck."
+    },
+    {
+        "name":"Cleasen",
+        "description":
+            "CLEASEN\n\n\
+In your Shooting phase, you can select one or more units from your army that are not\n\
+Battle-shocked and are eligible to shoot. Until the end of your turn, the units you\n\
+selected are not eligible to shoot or declare a charge.\n\
+At the end of your turn, each objective marker that is not within your deployment zone\n\
+that you control that has one or more of these selected units within range is cleansed\n\
+by your army.\n\
+If one or more objective markers are cleansed by your army this turn, this Secondary Mission\n\
+is achieved and you score a number of VP depending on the number of objective markers\n\
+cleansed by your army this turn, as follows:\n\
+ - 1 objective marker cleansed = 2VP if you are using Fixed Missions, or 3VP if you are\n\
+   using Tactical Missions.\n\
+ - 2 or more objective markers cleansed = 4VP if you are using Fixed Missions, or 5VP if\n\
+   you are using Tactical Missions."
+    },
+    {
+        "name":"Deploy teleport homers",
+        "description":
+            "DEPLOY TELEPORT HOMERS\n\n\
+In your shooting phase, you can select one unit from your army that is not Battle-shocked\n\
+and is eligible to shoot. Until the end of your turn, that unit is not eligible to shoot\n\
+or declare a charge.\n\
+At the end of your turn, if that unit is within your opponents deployment zone, or within\n\
+6” of the centre of the battlefield, it deploys a teleport homer at that locations,\n\
+this Secondary Mission is achieved and you score a number of VP depending on where the\n\
+teleport homer was deployed, as follows:\n\
+ - Centre of battlefield = 2VP if you are using Fixed Missions,\n\
+   or 3VP if you are using Tactical Missions\n\
+ - Opponent’s deployment zone = 4VP if you are using Fixed Missions,\n\
+   or 5VP if you are using Tactical Missions"
     }
 ]

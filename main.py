@@ -20,9 +20,15 @@ class GUI:
         self.app.columnconfigure(0, weight=1)
         self.app.rowconfigure(0, weight=1)
         
+        # Defender missions variables
         self.def_missions_list = list(range(len(secundary_missions.secundary_missions_list)))
-        self.def_missions_1_ind = 0
-        pass
+        self.def_missions_1_number = -1
+        self.def_missions_2_number = -1
+        
+        # Attacker missions variables
+        self.atc_missions_list = list(range(len(secundary_missions.secundary_missions_list)))
+        self.atc_missions_1_number = -1
+        self.atc_missions_2_number = -1
     
     def secundary_missions(self):
         # Styles
@@ -66,6 +72,7 @@ class GUI:
             column=1
         )
 
+        # -- Defender Frame --
         tk.Label(
             def_frame,
             text="Defender secundary missions",
@@ -79,11 +86,10 @@ class GUI:
             height=1
         ).place(
             x = 10,
-            y = 30)
+            y = 10)
         
+        # Mission 1
         self.def_mis_1_text = tk.StringVar(self.app)
-        
-        self.def_mis_1_text.set(secundary_missions.secundary_missions_list[0]["description"])
         
         tk.Label(
             def_frame,
@@ -94,40 +100,208 @@ class GUI:
             fg=style_font_color_1,
             highlightbackground=style_borders__color_1, 
             highlightcolor=style_borders__color_1,
-            justify="center",
+            justify="left",
             width=77,
             height=15,
             textvariable=self.def_mis_1_text
-        ).place( x = 20, y = 150)
+        ).place( x = 20, y = 110)
         
-        tk.Button(self.app,text="Generate",command=self.generate_defender_mission_1, font=font_missions).place(x=20,y=100)
-        tk.Button(self.app,text="Discard",command=self.discard_defender_mission_1, font=font_missions).place(x=130,y=100)
-        tk.Button(self.app,text="Clean",command=self.clean_defender_mission_1, font=font_missions).place(x=225,y=100)
+        tk.Button(self.app,text="Generate",command=self.generate_defender_mission_1, font=font_missions).place(x=20,y=60)
+        tk.Button(self.app,text="Discard",command=self.discard_defender_mission_1, font=font_missions).place(x=160,y=60)
+        tk.Button(self.app,text="Clean",command=self.clean_defender_mission_1, font=font_missions).place(x=280,y=60)
+        
+        # Mission 2
+        self.def_mis_2_text = tk.StringVar(self.app)
+        
+        tk.Label(
+            def_frame,
+            name="defender mission 2",
+            text="NO MISSION",
+            bg=style_background_color_gen,
+            font = font_missions,
+            fg=style_font_color_1,
+            highlightbackground=style_borders__color_1, 
+            highlightcolor=style_borders__color_1,
+            justify="left",
+            width=77,
+            height=15,
+            textvariable=self.def_mis_2_text
+        ).place( x = 20, y = 530)
+        
+        tk.Button(self.app,text="Generate",command=self.generate_defender_mission_2, font=font_missions).place(x=20,y=480)
+        tk.Button(self.app,text="Discard",command=self.discard_defender_mission_2, font=font_missions).place(x=160,y=480)
+        tk.Button(self.app,text="Clean",command=self.clean_defender_mission_2, font=font_missions).place(x=280,y=480)
+        
+        # -- Attacker Frame --
+        tk.Label(
+            atc_frame,
+            text="Attacker secundary missions",
+            bg=style_background_color_atc,
+            font=font_title,
+            fg=style_font_color_1,
+            highlightbackground=style_borders__color_1, 
+            highlightcolor=style_borders__color_1,
+            justify="center",
+            width=50,
+            height=1
+        ).place(
+            x = 910,
+            y = 10)
+        
+        # Mission 1
+        self.atc_mis_1_text = tk.StringVar(self.app)
+        
+        tk.Label(
+            atc_frame,
+            name="attacker mission 1",
+            text="NO MISSION",
+            bg=style_background_color_gen,
+            font = font_missions,
+            fg=style_font_color_1,
+            highlightbackground=style_borders__color_1, 
+            highlightcolor=style_borders__color_1,
+            justify="left",
+            width=77,
+            height=15,
+            textvariable=self.atc_mis_1_text
+        ).place( x = 920, y = 110)
+        
+        tk.Button(self.app,text="Generate",command=self.generate_attacker_mission_1, font=font_missions).place(x=920,y=60)
+        tk.Button(self.app,text="Discard",command=self.discard_attacker_mission_1, font=font_missions).place(x=1060,y=60)
+        tk.Button(self.app,text="Clean",command=self.clean_attacker_mission_1, font=font_missions).place(x=1180,y=60)
+        
+        # Mission 2
+        self.atc_mis_2_text = tk.StringVar(self.app)
+        
+        tk.Label(
+            atc_frame,
+            name="attacker mission 2",
+            text="NO MISSION",
+            bg=style_background_color_gen,
+            font = font_missions,
+            fg=style_font_color_1,
+            highlightbackground=style_borders__color_1, 
+            highlightcolor=style_borders__color_1,
+            justify="left",
+            width=77,
+            height=15,
+            textvariable=self.atc_mis_2_text
+        ).place( x = 920, y = 530)
+        
+        tk.Button(self.app,text="Generate",command=self.generate_attacker_mission_2, font=font_missions).place(x=920,y=480)
+        tk.Button(self.app,text="Discard",command=self.discard_attacker_mission_2, font=font_missions).place(x=1060,y=480)
+        tk.Button(self.app,text="Clean",command=self.clean_attacker_mission_2, font=font_missions).place(x=1180,y=480)
         
         self.app.mainloop()
-        
     
+    # -- Defender missions functions --
+    # Mission 1 functions
     def generate_defender_mission_1(self):
         l = len(self.def_missions_list)
         if l > 0:
-            self.def_missions_1_ind = random.randint(0, l-1)
-            ind = self.def_missions_list[self.def_missions_1_ind]
-            self.def_mis_1_text.set(secundary_missions.secundary_missions_list[ind]["description"])
+            ind = random.randint(0, l-1)
+            self.def_missions_1_number = self.def_missions_list[ind]
+            self.def_mis_1_text.set(secundary_missions.secundary_missions_list[self.def_missions_1_number]["description"])
         else:
+            self.def_missions_1_number = -1
             self.def_mis_1_text.set("NO MISSION")
-            
         self.app.mainloop()
         
     def discard_defender_mission_1(self):
-        if self.def_missions_1_ind > -1:
-            self.def_missions_list.remove(self.def_missions_list[self.def_missions_1_ind])
-        self.def_missions_1_ind = -1
+        if self.def_missions_1_number > -1:
+            self.def_missions_list.remove(self.def_missions_1_number)
+            self.def_missions_1_number = -1
         self.clean_defender_mission_1()
         
     def clean_defender_mission_1(self):
         self.def_mis_1_text.set("NO MISSION")
         self.app.mainloop()
         
+    # Mission 2 functions
+    def generate_defender_mission_2(self):
+        l = len(self.def_missions_list)
+        if l > 0:
+            ind = random.randint(0, l-1)
+            self.def_missions_2_number = self.def_missions_list[ind]
+            self.def_mis_2_text.set(secundary_missions.secundary_missions_list[self.def_missions_2_number]["description"])
+        else:
+            self.def_missions_2_number = -1
+            self.def_mis_2_text.set("NO MISSION")
+        self.app.mainloop()
+        
+    def discard_defender_mission_2(self):
+        if self.def_missions_2_number > -1:
+            self.def_missions_list.remove(self.def_missions_2_number)
+            self.def_missions_2_number = -1
+        self.clean_defender_mission_2()
+        
+    def clean_defender_mission_2(self):
+        self.def_mis_2_text.set("NO MISSION")
+        self.app.mainloop()
+    
+    # -- Attacker missions functions --
+    # Mission 1 functions
+    def generate_attacker_mission_1(self):
+        l = len(self.atc_missions_list)
+        if l > 0:
+            ind = random.randint(0, l-1)
+            self.atc_missions_1_number = self.atc_missions_list[ind]
+            self.atc_mis_1_text.set(secundary_missions.secundary_missions_list[self.atc_missions_1_number]["description"])
+        else:
+            self.atc_missions_1_number = -1
+            self.atc_mis_1_text.set("NO MISSION")
+        self.app.mainloop()
+        
+    def discard_attacker_mission_1(self):
+        if self.atc_missions_1_number > -1:
+            self.atc_missions_list.remove(self.atc_missions_1_number)
+            self.atc_missions_1_number = -1
+        self.clean_attacker_mission_1()
+        
+    def clean_attacker_mission_1(self):
+        self.atc_mis_1_text.set("NO MISSION")
+        self.app.mainloop()
+        
+    # Mission 2 functions
+    def generate_attacker_mission_2(self):
+        l = len(self.atc_missions_list)
+        if l > 0:
+            ind = random.randint(0, l-1)
+            self.atc_missions_2_number = self.atc_missions_list[ind]
+            self.atc_mis_2_text.set(secundary_missions.secundary_missions_list[self.atc_missions_2_number]["description"])
+        else:
+            self.atc_missions_2_number = -1
+            self.atc_mis_2_text.set("NO MISSION")
+        self.app.mainloop()
+        
+    def discard_attacker_mission_2(self):
+        if self.atc_missions_2_number > -1:
+            self.atc_missions_list.remove(self.atc_missions_2_number)
+            self.atc_missions_2_number = -1
+        self.clean_attacker_mission_2()
+        
+    def clean_attacker_mission_2(self):
+        self.atc_mis_2_text.set("NO MISSION")
+        self.app.mainloop()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     def main(self):
         # Styles
         style_background_color_1 = "#1cd8ed"

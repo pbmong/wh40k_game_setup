@@ -4,6 +4,7 @@ from os.path import isfile, join
 import random
 
 from missions import secundary_missions
+from missions import main_missions
 
 import tkinter as tk
 
@@ -21,8 +22,10 @@ class GUI:
         self.app_map.columnconfigure(0, weight=1)
         self.app_map.rowconfigure(0, weight=1)
         
-        # Deployment and map variables
+        # Deployment, map and main mission variables
         self.deployment_name = None
+        self.main_mission_text = ""
+        self.rule_mission_text = ""
                 
         # --- Secundary tactical missions APP ---
         
@@ -304,8 +307,13 @@ class GUI:
     def map_and_main_mission(self):
         # Styles
         style_background_color_1 = "#1cd8ed"
+        style_background_color_gen = "#e0e0e0"
         style_borders__color_1 = "#204f54"
-        style_font_color_1 = "white"
+        style_font_color_1 = "black"
+        
+        # Fonts
+        font_title = ("Arial", 20)
+        font_missions = ("Arial", 15)
 
         # Frames
         map_frame = tk.Frame(
@@ -337,22 +345,19 @@ class GUI:
 
         title_txt = tk.StringVar(self.app_map)
 
-        tk.Wm.wm_title(self.app_map, "Warhammer 40k battle setup - map")
+        tk.Wm.wm_title(self.app_map, "Warhammer 40k battle setup - Map and Mission")
 
-        # Widgets
-
-        deployment_image = tk.PhotoImage(file="deployment/crucible_of_battle.png")
+        # -- Widgets --
+        # Deployment and map
+        tk.Button(self.app_map,text="Generate Deployment",command=self.printIt_deployment, font=("Arial",16)).place(x=15,y=15)
+        tk.Button(self.app_map,text="Generate Map",command=self.printIt_map, font=("Arial",16)).place(x=300,y=15)
         
         self.deploy_img_label = tk.Label(
-            map_frame,
-            image=deployment_image
+            map_frame
         )
         
-        map_image = tk.PhotoImage(file="maps/nexoparia_map_1.png")
-        
         self.map_img_label = tk.Label(
-            map_frame,
-            image=map_image
+            map_frame
         )
 
         #deployment_onlyfiles = [f for f in listdir("./deployment") if isfile(join("./deployment", f))]
@@ -360,9 +365,43 @@ class GUI:
         #for x in deployment_onlyfiles: self.lb.insert(tk.END, x)
         #self.lb.place(x=600,y=200)
 
-        tk.Button(self.app_map,text="Generate Deployment",command=self.printIt_deployment, font=("Arial",16)).place(x=10,y=10)
-        tk.Button(self.app_map,text="Generate Map",command=self.printIt_map, font=("Arial",16)).place(x=300,y=10)
-
+        # Main mission
+        tk.Button(self.app_map,text="Generate Main Mission",command=self.generate_main_mission, font=("Arial",16)).place(x=710,y=15)
+        tk.Button(self.app_map,text="Generate Mission Rule",command=self.generate_mission_rules, font=("Arial",16)).place(x=1100,y=15)
+        
+        self.main_mission_text = tk.StringVar(self.app_map)
+        self.main_mission_text.set("MAIN MISSION")
+        tk.Label(
+            main_mission_frame,
+            name="main mission",
+            text="Main mission",
+            bg=style_background_color_gen,
+            font = font_missions,
+            fg=style_font_color_1,
+            highlightbackground=style_borders__color_1, 
+            highlightcolor=style_borders__color_1,
+            justify="left",
+            width=96,
+            height=20,
+            textvariable=self.main_mission_text
+        ).place(x = 710, y = 100)
+        
+        self.mission_rule_text = tk.StringVar(self.app_map)
+        self.mission_rule_text.set("RULE MISSION")
+        tk.Label(
+            main_mission_frame,
+            name="rule mission",
+            text="Rule mission",
+            bg=style_background_color_gen,
+            font = font_missions,
+            fg=style_font_color_1,
+            highlightbackground=style_borders__color_1, 
+            highlightcolor=style_borders__color_1,
+            justify="left",
+            width=96,
+            height=10,
+            textvariable=self.mission_rule_text
+        ).place(x = 710, y = 640)
         
     def printIt_deployment(self): 
         
@@ -372,7 +411,7 @@ class GUI:
         self.deploy_img_label.config(image=image_file)
         self.deploy_img_label.place(
             x = 75,
-            y = 75
+            y = 65
         )
         self.app_map.mainloop()
         
@@ -400,6 +439,16 @@ class GUI:
             x = 40,
             y = 465
         )
+        self.app_map.mainloop()
+        
+    def generate_main_mission(self):
+        ind = random.randint(0, len(main_missions.main_missions_list)-1)
+        self.main_mission_text.set(main_missions.main_missions_list[ind]["description"])
+        self.app_map.mainloop()
+    
+    def generate_mission_rules(self):
+        ind = random.randint(0, len(main_missions.missions_rules_list)-1)
+        self.mission_rule_text.set(main_missions.missions_rules_list[ind]["description"])
         self.app_map.mainloop()
             
 window = GUI()

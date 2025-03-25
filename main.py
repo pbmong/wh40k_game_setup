@@ -12,11 +12,24 @@ class GUI:
     def __init__(self):
         self.size = (1800, 900)
         
+        # --- Deployment, map and main mission APP ---
+        
+        self.app_map = tk.Tk()
+        self.app_map.geometry("1800x900")
+        self.app_map.config(background="grey")
+        self.app_map.resizable(False, False)
+        self.app_map.columnconfigure(0, weight=1)
+        self.app_map.rowconfigure(0, weight=1)
+        
+        # Deployment and map variables
+        self.deployment_name = None
+                
+        # --- Secundary tactical missions APP ---
+        
         self.app = tk.Tk()
         self.app.geometry("1800x900")
         self.app.config(background="grey")
         self.app.resizable(False, False)
-
         self.app.columnconfigure(0, weight=1)
         self.app.rowconfigure(0, weight=1)
         
@@ -31,6 +44,9 @@ class GUI:
         self.atc_missions_2_number = -1
     
     def secundary_missions(self):
+        
+        tk.Wm.wm_title(self.app, "Warhammer 40k battle setup - Secundary missions")
+        
         # Styles
         style_background_color_def = "#99ff99"
         style_background_color_atc = "#ff9999"
@@ -74,7 +90,7 @@ class GUI:
 
         # -- Defender Frame --
         tk.Label(
-            def_frame,
+            self.app,
             text="Defender secundary missions",
             bg=style_background_color_def,
             font=font_title,
@@ -92,7 +108,7 @@ class GUI:
         self.def_mis_1_text = tk.StringVar(self.app)
         
         tk.Label(
-            def_frame,
+            self.app,
             name="defender mission 1",
             text="NO MISSION",
             bg=style_background_color_gen,
@@ -114,7 +130,7 @@ class GUI:
         self.def_mis_2_text = tk.StringVar(self.app)
         
         tk.Label(
-            def_frame,
+            self.app,
             name="defender mission 2",
             text="NO MISSION",
             bg=style_background_color_gen,
@@ -134,7 +150,7 @@ class GUI:
         
         # -- Attacker Frame --
         tk.Label(
-            atc_frame,
+            self.app,
             text="Attacker secundary missions",
             bg=style_background_color_atc,
             font=font_title,
@@ -152,7 +168,7 @@ class GUI:
         self.atc_mis_1_text = tk.StringVar(self.app)
         
         tk.Label(
-            atc_frame,
+            self.app,
             name="attacker mission 1",
             text="NO MISSION",
             bg=style_background_color_gen,
@@ -174,7 +190,7 @@ class GUI:
         self.atc_mis_2_text = tk.StringVar(self.app)
         
         tk.Label(
-            atc_frame,
+            self.app,
             name="attacker mission 2",
             text="NO MISSION",
             bg=style_background_color_gen,
@@ -285,24 +301,7 @@ class GUI:
         self.app.mainloop()
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    def main(self):
+    def map_and_main_mission(self):
         # Styles
         style_background_color_1 = "#1cd8ed"
         style_borders__color_1 = "#204f54"
@@ -310,22 +309,24 @@ class GUI:
 
         # Frames
         map_frame = tk.Frame(
-            self.app,
-            borderwidth=10,
-            width=self.size[0]/3,
-            height=self.size[1],
-            bg=style_background_color_1
-        ).grid(
-            row=0,
-            column=0,
-            
-        )
-        
-        main_mission_frame = tk.Frame(
+            self.app_map,
             highlightbackground=style_borders__color_1, 
             highlightcolor=style_borders__color_1, 
             highlightthickness=5, 
-            width=self.size[0]/3, 
+            width=self.size[0]*3.8/10, 
+            height=self.size[1], 
+            bg=style_background_color_1
+        ).grid(
+            row=0,
+            column=0
+        )
+        
+        main_mission_frame = tk.Frame(
+            self.app_map,
+            highlightbackground=style_borders__color_1, 
+            highlightcolor=style_borders__color_1, 
+            highlightthickness=5, 
+            width=self.size[0]*(10-3.8)/10, 
             height=self.size[1], 
             bg=style_background_color_1
         ).grid(
@@ -333,71 +334,74 @@ class GUI:
             column=1
         )
 
-        secundary_missions_frame = tk.Frame(
-            self.app,
-            borderwidth=10,
-            width=self.size[0]/3,
-            height=self.size[1],
-            bg=style_background_color_1
-        ).grid(
-            row=0,
-            column=2
-        )
 
-        title_txt = tk.StringVar(self.app)
-        input_txt = tk.StringVar(self.app)
+        title_txt = tk.StringVar(self.app_map)
 
-        tk.Wm.wm_title(self.app, "Warhammer 40k Battle setup")
+        tk.Wm.wm_title(self.app_map, "Warhammer 40k battle setup - map")
 
         # Widgets
 
-        tk.Label(
-            map_frame,
-            text="Tittle",
-            bg=style_background_color_1,
-            fg=style_font_color_1,
-            highlightbackground=style_borders__color_1, 
-            highlightcolor=style_borders__color_1,
-            justify="center",
-            textvariable=title_txt,
-            width=10,
-            height=5
-        ).place(
-            x = 200,
-            y = 300)
-
-        #tk.Entry(            map_frame,            bg="white",            fg="black",            justify="center",            textvariable=input_txt        ).place(                x = 10,                y = 300            )
-
         deployment_image = tk.PhotoImage(file="deployment/crucible_of_battle.png")
-        self.img_label = tk.Label(
+        
+        self.deploy_img_label = tk.Label(
             map_frame,
             image=deployment_image
         )
-        self.img_label.place(
-            x = 500,
-            y = 300
-        )
-
-        onlyfiles = [f for f in listdir("./deployment") if isfile(join("./deployment", f))]
-
-        self.lb = tk.Listbox(self.app, selectmode="single", height = len(onlyfiles), font=("Arial",16)) # create Listbox
-        for x in onlyfiles: self.lb.insert(tk.END, x)
-        self.lb.place(x=600,y=200)
-
-        tk.Button(self.app,text="Start",command=self.printIt, font=("Arial",16)).place(x=730,y=200)
-
-        self.app.mainloop()
         
-    def printIt(self): 
-        SelectList = self.lb.curselection()
-        selection_list=[self.lb.get(i) for i in SelectList] # this will print the value you select
-        deployment_image = tk.PhotoImage(file="deployment/" + selection_list[0])
-        self.img_label.config(image=deployment_image)
-        self.img_label.place(
-            x = 500,
-            y = 300
+        map_image = tk.PhotoImage(file="maps/nexoparia_map_1.png")
+        
+        self.map_img_label = tk.Label(
+            map_frame,
+            image=map_image
         )
-        self.app.mainloop()
+
+        #deployment_onlyfiles = [f for f in listdir("./deployment") if isfile(join("./deployment", f))]
+        #self.lb = tk.Listbox(self.app_map, selectmode="single", height = len(deployment_onlyfiles), font=("Arial",16)) # create Listbox
+        #for x in deployment_onlyfiles: self.lb.insert(tk.END, x)
+        #self.lb.place(x=600,y=200)
+
+        tk.Button(self.app_map,text="Generate Deployment",command=self.printIt_deployment, font=("Arial",16)).place(x=10,y=10)
+        tk.Button(self.app_map,text="Generate Map",command=self.printIt_map, font=("Arial",16)).place(x=300,y=10)
+
+        
+    def printIt_deployment(self): 
+        
+        images_list = [f for f in listdir("./deployment") if isfile(join("./deployment", f))]
+        self.deployment_name = images_list[random.randint(0,len(images_list)-1)]
+        image_file = tk.PhotoImage(file="deployment/" + self.deployment_name)
+        self.deploy_img_label.config(image=image_file)
+        self.deploy_img_label.place(
+            x = 75,
+            y = 75
+        )
+        self.app_map.mainloop()
+        
+    def printIt_map(self):
+        
+        images_list = [f for f in listdir("./maps") if isfile(join("./maps", f))]
+        
+        if self.deployment_name == "crucible_of_battle.png":
+            maps_ind_list = [0, 1, 2, 3, 5, 6, 7]
+        elif self.deployment_name == "dawn_of_war.png":
+            maps_ind_list = [1, 2, 3, 4]
+        elif self.deployment_name == "hammer_and_anvil.png":
+            maps_ind_list = [0, 1, 2, 3, 4, 5, 6, 7]
+        elif self.deployment_name == "search_and_destroy.png":
+            maps_ind_list = [0, 1, 2, 3, 5, 6, 7]
+        elif self.deployment_name == "sweeping_engagement.png":
+            maps_ind_list = [0, 1, 2, 3, 4, 5, 7]            
+        else:
+            maps_ind_list = [range(len(images_list)-1)]
+            
+        map_ind = maps_ind_list[random.randint(0,len(maps_ind_list)-1)]
+        image_file = tk.PhotoImage(file="maps/" + images_list[map_ind])
+        self.map_img_label.config(image=image_file)
+        self.map_img_label.place(
+            x = 40,
+            y = 465
+        )
+        self.app_map.mainloop()
             
 window = GUI()
+window.map_and_main_mission()
 window.secundary_missions()

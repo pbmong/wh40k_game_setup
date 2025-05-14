@@ -428,7 +428,9 @@ class GUI:
         elif self.deployment_name == "search_and_destroy.png":
             maps_ind_list = [0, 1, 2, 3, 5, 6, 7]
         elif self.deployment_name == "sweeping_engagement.png":
-            maps_ind_list = [0, 1, 2, 3, 4, 5, 7]            
+            maps_ind_list = [0, 1, 2, 3, 4, 5, 7]  
+        elif self.deployment_name == "tipping_point.png":
+            maps_ind_list = [0, 1, 2, 3, 5, 6, 7]          
         else:
             maps_ind_list = [range(len(images_list)-1)]
             

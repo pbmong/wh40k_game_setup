@@ -195,5 +195,45 @@ teleport homer was deployed, as follows:\n\
    or 3VP if you are using Tactical Missions\n\
  - Opponent’s deployment zone = 4VP if you are using Fixed Missions,\n\
    or 5VP if you are using Tactical Missions"
+    },
+    {
+        "name":"Containment",
+        "description":
+            "CONTAINMENT\n\n\
+In your shooting phase, select one or more units from your army that are wholly within 9\"\n\
+of one or more battlefield edges and not within your deployment zone. Select a different one\n\
+of those battlefield edges for each of those units.Each battlefield edge you selected is\n\
+contained by your army.\n\
+At the end of your turn, for each battlefield edge contained by your army this turn you\n\
+score 2 VP (up to 6).\
+"
+    },
+    {
+        "name":"Containment",
+        "description":
+            "SABOTAGE\n\n\
+In your shooting phase, you can select one unit from your army that is within a terrain\n\
+feature and not within your deployment zone and is not Battle-shocked and is eligible to\n\
+shoot. Until the end of your turn, that unit is not eligible to shoot\n\
+or declare a charge.\n\
+At the end of your opponent’s next turn or the end of the battle (whichever comes first),\n\
+if your unit is on the battlefield your unit committed sabotage:\n\
+- Score 3VP if that unit is not within your opponent’s deployment zone.\n\
+- Score 6VP if that unit is within your opponent’s deployment zone.\n\
+"
+    },
+    {
+        "name":"Containment",
+        "description":
+            "RECOVER ASSETS\n\n\
+In your shooting phase, you can select one or more units from your army that is not \n\
+Battle-shocked and is eligible to shoot. Until the end of your turn, that unit is not\n\
+eligible to shoot or declare a charge.\n\
+At the end of your opponent´s next turn or the end of the battle, if each of those units\n\
+is wholly within a different one of the following areas: your deployment zone,\n\
+No Man’s Land, your opponent’s deployment zone, they recover assets:\n\
+- Score 3VP if you recover assets in two areas:\n\
+- Score 6VP if you recover assets in three areas:\n\
+"
     }
 ]

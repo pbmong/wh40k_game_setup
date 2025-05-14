@@ -106,6 +106,73 @@ that turn\n\n\
   scores VP as described above, but does so at the end of their turn instead of at the end of their Command phase.\n\n\
 - End of Battle: NA\
             "
+    },
+    {
+        "name":"",
+        "description":
+            "LINCHPIN\n\n\
+- Battle Round 2-4: At the end of each Command phase, If the player whose turn it is does not control the objective\n\
+  marker in their deployment zone, they score 3VP for each objective marker they control.\n\
+  OR\n\
+  If the player whose turn it is controls the objective marker in their deployment zone, they score 3VP for controlling\n\
+  that objective marker, and 5VP for each other objective marker they control (up to 15VP per turn).\n\n\
+- Battle Round 5: The player who has the first turn scores VP as described above. The player who has the second turn\n\
+  scores VP as described above, but does so at the end of their turn instead of at the end of their Command phase.\n\n\
+- End of Battle: NA\
+            "
+    },
+    {
+        "name":"",
+        "description":
+            "TERRAFORM\n\n\
+- Special: From the second battle round, in each player’s Shooting phase, the player whose turn it is can select\n\
+  one unit from their army that is not Battle-shocked and is eligible to shoot. Until the end of that turn, that\n\
+  unit is not eligible to shoot or declare a charge. At the end of your oponent´s next turn, if that unit is within\n\
+  range of an objective marker in No Man’s Land and you control it, that objective marker is terraformed for\n\
+  the rest of the battle. \n\n\
+- Battle Round 2-4: At the end of each Command phase,The player whose turn it is scores VP as follows\n\
+  (up to 15VP per turn):\n\
+    * 4VP for each objective marker they control.\n\
+    * 2VP for each objective marker they have terraformed during the battle.\n\
+  NOTE: The above VP are cumulative, so a player who controls one objective marker that they have also terraformed\n\
+  will score 6VP that turn..\n\n\
+- Battle Round 5: The player who has the first turn scores VP as described above. The player who has the second turn\n\
+  scores VP as described above, but does so at the end of their turn instead of at the end of their Command phase.\n\n\
+- End of Battle: NA\
+            "
+    },
+    {
+        "name":"",
+        "description":
+            "BURDEN OF TRUST\n\n\
+- Battle Round 2-4: At the end of each Command phase, The player whose turn it is scores 4VP for each objective\n\
+  marker they control that is not within their deployment zone. Then, for each objective marker that player\n\
+  controls, they can select one unit from their army (excluding AIRCRAFT) within range of that objective marker\n\
+  to guard it until the start of their next turn.\n\
+  The opponent of the player whose turn it is scores 2VP for each of their units (excluding Battle-shocked units)\n\
+  that are within range of and guarding an objective marker they control.\n\n\
+- Battle Round 5: The player who has the first turn scores VP as described above. The player who has the second turn\n\
+  scores VP as described above, but does so at the end of their turn instead of at the end of their Command phase.\n\n\
+- End of Battle: NA\
+            "
+    },
+    {
+        "name":"",
+        "description":
+            "THE RITUAL\n\n\
+- Special: When setting up the battlefield, remove all objective markers in No Man’s Land except the one closest to\n\
+  the centre of the battlefield.\n\n\
+  From the second battle round, in each player’s Shooting phase, the player whose turn it is can select\n\
+  one unit from their army that is not Battle-shocked and is eligible to shoot. Until the end of that turn, that\n\
+  unit is not eligible to shoot or declare a charge. Set up one objective marker anywhere on the battlefield wholly\n\
+  within No Man’s Land and within 1\" of your unit, provided it can be setup exactly 12\" from one other objective\n\
+  marker within No Man’s Land and not within 6\" of any other objective marker.. \n\n\
+- Battle Round 2-4: At the end of each Command phase,The player whose turn it is scores 5VP for each objective\n\
+  marker in No Man’s Land that they control (up to 15VP per turn).\n\n\
+- Battle Round 5: The player who has the first turn scores VP as described above. The player who has the second turn\n\
+  scores VP as described above, but does so at the end of their turn instead of at the end of their Command phase.\n\n\
+- End of Battle: NA\
+            "
     }
 ]
 
@@ -171,5 +238,75 @@ Command phase, they roll one D6: on a 4+, that player gains 1CP.\
         "description":
             "VOX STATIC\n\n\
 In this mission, the Command Re-roll Stratagem and New Orders Stratagem both cost 2CP to use.\
+"
+    },
+    {
+        "name":"INSPIRED LEADERSHIP",
+        "description":
+            "INSPIRED LEADERSHIP\n\n\
+In this mission, While a player’s WARLORD is not within their deployment zone, each time a unit from that player’s\n\
+army takes a Battle-shock test, if that player’s WARLORD is within 9\" of and visible to that unit, add 1 to that test.\
+"
+    },
+    {
+        "name":"RAISE BANNERS",
+        "description":
+            "RAISE BANNERS\n\n\
+In this mission, At the end of each player’s turn, if a BATTLELINE unit from their army is within range of an objective\n\
+marker that player controls, that unit raises a banner on that objective marker: that player scores 1VP (which is counted\n\
+towards their Secondary Mission score), and that player’s units can no longer raise a banner on that objective marker.\
+"
+    },
+    {
+        "name":"RAPID ESCALATION",
+        "description":
+            "RAPID ESCALATION\n\n\
+In this mission, In the first battle round, each player can set up BATTLELINE units from Strategic Reserves in the\n\
+Reinforcements step of their Movement phase. If they do, those units must be set up wholly within 6\" of any battlefield\n\
+edge, but no model in those units can be set up within the enemy deployment zone.\n\
+The points total of the units a player can set up in this way cannot exceed 10% of their total points limit for the\n\
+chosen battle size.\
+"
+    },
+    {
+        "name":"STALWARTS",
+        "description":
+            "STALWARTS\n\n\
+In this mission, BATTLELINE units that perform an Action are still eligible to shoot in that turn (but cannot start\n\
+to perform another Action in that turn), and BATTLELINE units can perform Actions while within Engagement Range of\n\
+one or more enemy units.\
+"
+    },
+    {
+        "name":"SMOKE AND MIRRORS",
+        "description":
+            "SMOKE AND MIRRORS\n\n\
+In this mission, After both players have deployed their armies, starting with the Attacker, each player can place one\n\
+unit from their army that is on the battlefield into Strategic Reserves, regardless of how many units are already in\n\
+Strategic Reserves.\n\
+The points value of such a unit cannot exceed 25% of each player’s total points limit for the chosen battle size.\
+"
+    },
+    {
+        "name":"SWIFT ACTION",
+        "description":
+            "SWIFT ACTION\n\n\
+In this mission, BATTLELINE units that Advance or Fall Back are still eligible to perform an Action in that turn.\
+"
+    },
+    {
+        "name":"FOG OF WAR",
+        "description":
+            "FOG OF WAR\n\n\
+In this mission, In the first battle round, units have the Benefit of Cover, and players cannot use Core Stratagems\n\
+(excluding the New Orders Stratagem).\
+"
+    },
+    {
+        "name":"PREPARED POSITIONS",
+        "description":
+            "PREPARED POSITIONS\n\n\
+In this mission, Players can target their BATTLELINE units with the Go to Ground and Heroic Intervention Stratagems\n\
+for 0CP (but cannot do so if they have already used that Stratagem on a different unit that turn).\
 "
     }]

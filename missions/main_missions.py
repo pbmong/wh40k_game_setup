@@ -127,15 +127,12 @@ that turn\n\n\
             "TERRAFORM\n\n\
 - Special: From the second battle round, in each player’s Shooting phase, the player whose turn it is can select\n\
   one unit from their army that is not Battle-shocked and is eligible to shoot. Until the end of that turn, that\n\
-  unit is not eligible to shoot or declare a charge. At the end of your oponent´s next turn, if that unit is within\n\
-  range of an objective marker in No Man’s Land and you control it, that objective marker is terraformed for\n\
-  the rest of the battle. \n\n\
-- Battle Round 2-4: At the end of each Command phase,The player whose turn it is scores VP as follows\n\
-  (up to 15VP per turn):\n\
-    * 4VP for each objective marker they control.\n\
-    * 2VP for each objective marker they have terraformed during the battle.\n\
-  NOTE: The above VP are cumulative, so a player who controls one objective marker that they have also terraformed\n\
-  will score 6VP that turn..\n\n\
+  unit is not eligible to shoot or declare a charge.\n\
+  At the end of your turn, if that unit is within range of an objective marker not in your deployment zone and you\n\
+  control it, that objective marker is terraformed. If it was terraformed by your oponent, it no longer is.\n\n\
+- Battle Round 2-4: At the end of each Command phase, the player whose turn it is scores 4VP for each objective marker\n\
+  they control (up to 12VP per turn)\n\
+  At the end of the turn each player scores 1VP for each objective marker that is terraformed by them.\n\n\
 - Battle Round 5: The player who has the first turn scores VP as described above. The player who has the second turn\n\
   scores VP as described above, but does so at the end of their turn instead of at the end of their Command phase.\n\n\
 - End of Battle: NA\
@@ -145,7 +142,7 @@ that turn\n\n\
         "name":"",
         "description":
             "BURDEN OF TRUST\n\n\
-- Battle Round 2-4: At the end of each Command phase, The player whose turn it is scores 4VP for each objective\n\
+- Battle Round 1(second player)-4: At the end of each Command phase, The player whose turn it is scores 4VP for each objective\n\
   marker they control that is not within their deployment zone. Then, for each objective marker that player\n\
   controls, they can select one unit from their army (excluding AIRCRAFT) within range of that objective marker\n\
   to guard it until the start of their next turn.\n\
@@ -173,6 +170,25 @@ that turn\n\n\
   scores VP as described above, but does so at the end of their turn instead of at the end of their Command phase.\n\n\
 - End of Battle: NA\
             "
+    },
+    {
+        "name":"",
+        "description":
+            "HIDDEN SUPPPLIES\n\n\
+- Special: players must set up one additional objective marker in No Man’s Land. Unless the Chosen Battlefield\n\
+  mission rule is also in effect, before setting up this new objective marker, players must first move the objective\n\
+  marker in the centre of the battlefield 6” directly towards one of the corners of the battlefield (if No Man’s Land\n\
+  touches any corners of the battlefield, you must move the objective marker towards one of those corners). Players\n\
+  then set up the new objective marker 6” from the centre of the battlefield towards the diagonally opposite corner\n\
+  of the battlefield to the previously moved objective marker.\n\n\
+- Battle Round 2-4: At the end of each Command phase, the player whose turn it is scores points as follow:\n\
+  * 5VP if they control one objective marker not within their deployment zone.\n\
+  * 5VP if they control two objective markers not within their deployment zone.\n\
+  * 5VP if they control more objective markers than your oponent.\n\n\
+- Battle Round 5: The player who has the first turn scores VP as described above. The player who has the second turn\n\
+  scores VP as described above, but does so at the end of their turn instead of at the end of their Command phase.\n\n\
+- End of Battle: NA\
+            "
     }
 ]
 
@@ -188,12 +204,7 @@ In this mission, no additional mission rules apply                              
         "name":"HIDDEN SUPPPLIES",
         "description":
             "HIDDEN SUPPPLIES\n\n\
-In this mission, players must set up one additional objective marker in No Man’s Land. Unless the Chosen Battlefield\n\
-mission rule is also in effect, before setting up this new objective marker, players must first move the objective\n\
-marker in the centre of the battlefield 6” directly towards one of the corners of the battlefield (if No Man’s Land\n\
-touches any corners of the battlefield, you must move the objective marker towards one of those corners). Players\n\
-then set up the new objective marker 6” from the centre of the battlefield towards the diagonally opposite corner\n\
-of the battlefield to the previously moved objective marker.\
+In this mission, \
 "
     },
     {

@@ -63,10 +63,10 @@ Secondary Mission deck."
             "EXTEND BATTLE LINES \n\n\
 At the end of your turn, if you control one or more objective markers in your own deployment\n\
 zone and you also control one or more objective markers in No Man’s Land, this\n\
-Secondary Mission is achieved and you score 5VP. If you only have one unit remaining\n\
+Secondary Mission is achieved and you score 4VP. If you only have one unit remaining\n\
 in your army, then this Secondary Mission is instead achieved at the end of your\n\
 turn if that unit controls one objective marker in No Man’s Land, but in this\n\
-instance you score 2VP instead of 5VP."
+instance you score 2VP instead of 4VP."
     },
     {
         "name":"No Prisoners",
@@ -98,7 +98,7 @@ wholly within your opponent’s deployment zone, this Secondary Mission is achie
 you score 4VP.\n\
 If, at the end of your turn, only one unit from your army (excluding Aircraft) is wholly\n\
 within your opponent’s deployment zone, this Secondary Mission is still achieved, but in\n\
-this instance you score 2VP instead of 4VP.\n\
+this instance you score 3VP instead of 4VP.\n\
 If you are using Tactical Missions, then when this Secondary Mission is achieved you score\n\
 an extra 1VP (for a maximum of 5VP)."
     },
@@ -132,20 +132,16 @@ then when this Secondary Mission is achieved you score an extra 1VP. However, if
 using Tactical Missions, you cannot score more than 8VP in total from this Secondary Mission."
     },
     {
-        "name":"Engage all fronts",
+        "name":"Engage on all fronts",
         "description":
-            "ENGAGE ALL FRONTS\n\n\
-At the end of your turn, if you have one or more qualifying units (see below) from your army\n\
-wholly within three or more different table quarters, and those units are all more than 3” away\n\
-from any other table quarter, this Secondary Mission is achieved and you score 4VP if you have\n\
-qualifying units in four different table quarters, or 2VP if you have qualifying units in three\n\
-different table quarters.\n\
-While a unit is Battle-shocked, it is not a qualifying unit.\n\
-If, when you draw this Secondary Mission card, you only have one or two qualifying units\n\
-remaining in your army, you can discard this Secondary Mission card and draw a new\n\
-Secondary Mission card.\n\
-If you are using tactical Missions, then when this Secondary Mission is achieved you score\n\
-an extra 1VP (for a maximum of 5VP)."
+            "ENGAGE ON ALL FRONTS\n\n\
+At the end of your turn, if you have one or more qualifying units (excluding Aircraft and\n\
+battle-shocked units) wholly within a table quarter and more than 6\" away from the center\n\
+of the battlefiel, you have presence in that table quarter.\n\
+Score point as following:\n\
+ * 1 VP if you have presence in two table quearters.\n\
+ * 2 VP if you have presence in three table quearters.\n\
+ * 4 VP if you have presence in four table quearters."
     },
     {
         "name":"Storm hostile objective",
@@ -228,12 +224,11 @@ if your unit is on the battlefield your unit committed sabotage:\n\
             "RECOVER ASSETS\n\n\
 In your shooting phase, you can select one or more units from your army that is not \n\
 Battle-shocked and is eligible to shoot. Until the end of your turn, that unit is not\n\
-eligible to shoot or declare a charge.\n\
-At the end of your opponent´s next turn or the end of the battle, if each of those units\n\
-is wholly within a different one of the following areas: your deployment zone,\n\
-No Man’s Land, your opponent’s deployment zone, they recover assets:\n\
+eligible to shoot or declare a charge. If each of those units is wholly within a\n\
+different one of the following areas: your deployment zone, No Man’s Land, your opponent’s\n\
+deployment zone, they recover assets:\n\
 - Score 3VP if you recover assets in two areas:\n\
-- Score 6VP if you recover assets in three areas:\n\
+- Score 5VP if you recover assets in three areas:\n\
 "
     }
 ]
